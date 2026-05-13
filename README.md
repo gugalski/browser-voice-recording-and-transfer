@@ -14,7 +14,7 @@ Record audio in the browser via the **MediaRecorder API**, POST the raw `webm/op
 
 | Layer | Technology |
 |-------|-----------|
-| Frontend | Vanilla JS + Web Audio API |
+| Frontend | React 18 + Vite |
 | Backend | Go 1.22 + `net/http` stdlib |
 | Audio conversion | `ffmpeg` via `os/exec` |
 | Storage | Local filesystem (Docker volume) |
@@ -32,14 +32,14 @@ docker compose up --build
 
 ## Local development (without Docker)
 
-Requires Go 1.22+ and `ffmpeg` installed locally.
+Requires Go 1.22+, `ffmpeg`, and Node.js 20+ installed locally.
 
 ```bash
 # backend
 cd backend && go run main.go
 
 # frontend
-cd frontend && python -m http.server 3000
+cd frontend && npm install && npm run dev
 ```
 
 ## API
@@ -100,6 +100,13 @@ Environment variables (see `.env.example`):
 │       └── storage.go
 └── frontend/
     ├── index.html
-    ├── style.css
-    └── recorder.js
+    ├── vite.config.js
+    ├── package.json
+    └── src/
+        ├── main.jsx
+        ├── App.jsx
+        ├── App.css
+        ├── Recorder.jsx
+        ├── RecordingList.jsx
+        └── utils.js
 ```

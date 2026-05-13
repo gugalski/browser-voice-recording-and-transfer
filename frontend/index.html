@@ -1,42 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Voice Recorder</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="container">
-    <h1>Voice Recorder</h1>
-
-    <div id="status" class="status"></div>
-
-    <canvas id="waveform" width="600" height="100"></canvas>
-
-    <div id="timer" class="timer">00:00</div>
-
-    <div class="controls">
-      <button id="btnStart">Start recording</button>
-      <button id="btnStop" disabled>Stop</button>
-    </div>
-
-    <div id="playback" class="hidden">
-      <audio id="player" controls></audio>
-      <div class="playback-controls">
-        <button id="btnUpload">Upload</button>
-        <button id="btnDiscard">Discard</button>
-      </div>
-      <div id="progress" class="progress hidden">
-        <div id="progressBar" class="progress-bar"></div>
-      </div>
-    </div>
-
-    <div id="recordings" class="recordings">
-      <h2>Saved recordings</h2>
-      <ul id="recordingList"></ul>
-    </div>
-  </div>
-  <script src="recorder.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voice Recorder</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
